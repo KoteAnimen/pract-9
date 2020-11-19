@@ -36,7 +36,7 @@ namespace pract_9
             nationality = nation;            
         }
 
-        public void ThrowAnswer(DataGridView dgv, int row)
+        public void AddToTable(DataGridView dgv, int row)
         {
             dgv[0, row].Value = firstName;
             dgv[1, row].Value = secondName;
@@ -99,7 +99,7 @@ namespace pract_9
             }
             else maleFemale = gender.женщина;
             Person man = new Person(firstName.Text, secondName.Text, middleName.Text, maleFemale, (int)yearBorn.Value, placeBorn.Text, nationality.Text);
-            man.ThrowAnswer(tablePeople, id);            
+            man.AddToTable(tablePeople, id);            
             persons.Add(man);
             id++;
 
