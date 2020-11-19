@@ -12,8 +12,8 @@ namespace pract_9
 {
     public enum gender
     {
-        male, 
-        female
+        мужчина, 
+        женщина
     }
     public struct Person
     {
@@ -52,14 +52,40 @@ namespace pract_9
     public partial class Form1 : Form
     {
         public List<Person> persons = new List<Person>();
+        public int id = 0;
 
         public Form1()
         {
             InitializeComponent();
+            tablePeople.ColumnCount = 7;
+            tablePeople.RowCount = 1;
+            tablePeople.Columns[0].Name = "Имя";
+            tablePeople.Columns[1].Name = "Фамилия";
+            tablePeople.Columns[2].Name = "Отчество";
+            tablePeople.Columns[3].Name = "Пол";
+            tablePeople.Columns[4].Name = "Год рождения";
+            tablePeople.Columns[5].Name = "Место рождения";
+            tablePeople.Columns[6].Name = "Национальность";
         }
 
         private void GetAnswer_Click(object sender, EventArgs e)
         {
+
+        }
+
+        private void AddPerson_Click(object sender, EventArgs e)
+        {
+            tablePeople.RowCount++;            
+            gender maleFemale;            
+            if (genderMale.Checked == true)
+            {
+                maleFemale = gender.мужчина;
+            }
+            else maleFemale = gender.женщина;
+            Person man = new Person(firstName.Text, secondName.Text, middleName.Text, maleFemale, (int)yearBorn.Value, placeBorn.Text, nationality.Text);
+            man.ThrowAnswer(tablePeople, id);            
+            persons.Add(man);
+            id++;
 
         }
     }

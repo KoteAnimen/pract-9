@@ -251,6 +251,7 @@
             this.AddPerson.TabIndex = 7;
             this.AddPerson.Text = "Добавить человека в таблицу";
             this.AddPerson.UseVisualStyleBackColor = true;
+            this.AddPerson.Click += new System.EventHandler(this.AddPerson_Click);
             // 
             // nationality
             // 
