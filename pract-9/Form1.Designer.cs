@@ -94,7 +94,7 @@
             // выходToolStripMenuItem
             // 
             this.выходToolStripMenuItem.Name = "выходToolStripMenuItem";
-            this.выходToolStripMenuItem.Size = new System.Drawing.Size(54, 20);
+            this.выходToolStripMenuItem.Size = new System.Drawing.Size(53, 20);
             this.выходToolStripMenuItem.Text = "Выход";
             // 
             // tablePeople
@@ -270,9 +270,24 @@
             // yearBorn
             // 
             this.yearBorn.Location = new System.Drawing.Point(150, 40);
+            this.yearBorn.Maximum = new decimal(new int[] {
+            2020,
+            0,
+            0,
+            0});
+            this.yearBorn.Minimum = new decimal(new int[] {
+            1900,
+            0,
+            0,
+            0});
             this.yearBorn.Name = "yearBorn";
             this.yearBorn.Size = new System.Drawing.Size(132, 20);
             this.yearBorn.TabIndex = 4;
+            this.yearBorn.Value = new decimal(new int[] {
+            1990,
+            0,
+            0,
+            0});
             // 
             // groupBox3
             // 
