@@ -21,7 +21,7 @@ namespace pract_9
         string secondName;
         string middleName;
         gender gender;        
-        int yearBorn;
+       public int yearBorn;
         string placeBorn;
         string nationality;
 
@@ -70,7 +70,23 @@ namespace pract_9
 
         private void GetAnswer_Click(object sender, EventArgs e)
         {
-
+            try
+            {
+                int summ = 0;
+                int currentYear = 2020;
+                int personAge = 0;
+                for (int i = 0; i < persons.Count; i++)
+                {
+                    personAge = currentYear - persons[i].yearBorn;
+                    summ += personAge;
+                }
+                middleAge.Text = (summ / persons.Count).ToString();
+            }
+            catch
+            {
+                MessageBox.Show("Таблица пуста");
+            }
+            
         }
 
         private void AddPerson_Click(object sender, EventArgs e)
@@ -87,6 +103,26 @@ namespace pract_9
             persons.Add(man);
             id++;
 
+        }
+
+        private void genderMale_CheckedChanged(object sender, EventArgs e)
+        {
+            if (genderMale.Checked == true) genderFemale.Checked = false;
+        }
+
+        private void genderFemale_CheckedChanged(object sender, EventArgs e)
+        {
+            if (genderFemale.Checked == true) genderMale.Checked = false;
+        }
+
+        private void AboutUs_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show("Филяк ИСП-31, вариант 1. Заполнить таблицу анкетных данных на 5 человек с полями: ФИО, пол, год рождения, место рождения, национальность. Вывести результат на экран. Вывести средний возраст. ");
+        }
+
+        private void Exit_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }

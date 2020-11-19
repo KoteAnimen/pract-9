@@ -30,8 +30,8 @@
         {
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.файлToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.оПрограммеToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.выходToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.AboutUs = new System.Windows.Forms.ToolStripMenuItem();
+            this.Exit = new System.Windows.Forms.ToolStripMenuItem();
             this.tablePeople = new System.Windows.Forms.DataGridView();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
@@ -71,8 +71,8 @@
             // 
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.файлToolStripMenuItem,
-            this.оПрограммеToolStripMenuItem,
-            this.выходToolStripMenuItem});
+            this.AboutUs,
+            this.Exit});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.Size = new System.Drawing.Size(473, 24);
@@ -85,17 +85,19 @@
             this.файлToolStripMenuItem.Size = new System.Drawing.Size(48, 20);
             this.файлToolStripMenuItem.Text = "Файл";
             // 
-            // оПрограммеToolStripMenuItem
+            // AboutUs
             // 
-            this.оПрограммеToolStripMenuItem.Name = "оПрограммеToolStripMenuItem";
-            this.оПрограммеToolStripMenuItem.Size = new System.Drawing.Size(94, 20);
-            this.оПрограммеToolStripMenuItem.Text = "О программе";
+            this.AboutUs.Name = "AboutUs";
+            this.AboutUs.Size = new System.Drawing.Size(94, 20);
+            this.AboutUs.Text = "О программе";
+            this.AboutUs.Click += new System.EventHandler(this.AboutUs_Click);
             // 
-            // выходToolStripMenuItem
+            // Exit
             // 
-            this.выходToolStripMenuItem.Name = "выходToolStripMenuItem";
-            this.выходToolStripMenuItem.Size = new System.Drawing.Size(53, 20);
-            this.выходToolStripMenuItem.Text = "Выход";
+            this.Exit.Name = "Exit";
+            this.Exit.Size = new System.Drawing.Size(53, 20);
+            this.Exit.Text = "Выход";
+            this.Exit.Click += new System.EventHandler(this.Exit_Click);
             // 
             // tablePeople
             // 
@@ -309,16 +311,20 @@
             this.genderFemale.TabIndex = 1;
             this.genderFemale.Text = "Женский";
             this.genderFemale.UseVisualStyleBackColor = true;
+            this.genderFemale.CheckedChanged += new System.EventHandler(this.genderFemale_CheckedChanged);
             // 
             // genderMale
             // 
             this.genderMale.AutoSize = true;
+            this.genderMale.Checked = true;
+            this.genderMale.CheckState = System.Windows.Forms.CheckState.Checked;
             this.genderMale.Location = new System.Drawing.Point(7, 20);
             this.genderMale.Name = "genderMale";
             this.genderMale.Size = new System.Drawing.Size(72, 17);
             this.genderMale.TabIndex = 0;
             this.genderMale.Text = "Мужской";
             this.genderMale.UseVisualStyleBackColor = true;
+            this.genderMale.CheckedChanged += new System.EventHandler(this.genderMale_CheckedChanged);
             // 
             // middleName
             // 
@@ -377,8 +383,8 @@
 
         private System.Windows.Forms.MenuStrip menuStrip1;
         private System.Windows.Forms.ToolStripMenuItem файлToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem оПрограммеToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem выходToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem AboutUs;
+        private System.Windows.Forms.ToolStripMenuItem Exit;
         private System.Windows.Forms.DataGridView tablePeople;
         private System.Windows.Forms.TabControl tabControl1;
         private System.Windows.Forms.TabPage tabPage1;
